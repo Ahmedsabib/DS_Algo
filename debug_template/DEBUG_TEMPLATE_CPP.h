@@ -1,3 +1,7 @@
+/**
+ * Description: Debugging Template
+ * Verification: https://codeforces.com/blog/entry/125435
+**/
 #ifndef DEBUG_TEMPLATE_CPP
 #define DEBUG_TEMPLATE_CPP
 #include <bits/stdc++.h>
