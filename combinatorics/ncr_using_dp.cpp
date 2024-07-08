@@ -4,7 +4,7 @@ using namespace std;
 
 #define int long long
 
-int fact[31], dp[35][35];
+int fact[31], dp[35][35], NCR[30][30];
 
 // Bionomial Coeffecient
 // nCr using DP
@@ -22,7 +22,20 @@ int32_t main() {
 
   fact[0] = fact[1] = 1;
   for (int i = 2; i <= 30; ++i) fact[i] = fact[i - 1] * i;
+  // Memoization
   memset(dp, -1, sizeof(dp));
   cout << ncr(10, 5) << '\n';
+
+  // Tabulation
+  for (int i = 0; i <= 20; ++i) {
+    NCR[i][0] = 1;
+    NCR[i][i] = 1;
+  }
+  for (int i = 1; i <= 20; ++i) {
+    for (int j = 1; j <= 20; ++j) {
+      NCR[i][j] = NCR[i - 1][j] + NCR[i - 1][j - 1];
+    }
+  }
+  cout << NCR[5][5] << '\n';
   return 0;
 }
